@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const config = require('./config/key')
 
 const { User } = require('./models/user');
+const { auth } = require('./middleware/auth');
 
 mongoose.connect(config.mongoURI,
     {useNewUrlParser : true, useUnifiedTopology : true}).then(() => {
@@ -18,6 +19,17 @@ mongoose.connect(config.mongoURI,
 app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+app.get('/api/users/auth', auth, (req, res) => {
+    res.status(200).json({
+        _id: req.user._id,
+        isAuth: true,
+        email: req.user.email,
+        name: req.user.name,
+        lastname: req.user.lastname,
+        role: req.user.role
+    });
+});
 
 app.post('/api/users/register', (req, res) => {
     const user = new User(req.body);
