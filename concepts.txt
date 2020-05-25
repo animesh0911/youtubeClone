@@ -10,3 +10,10 @@ create engine object in package.json and set node and npm versions in engine obj
 set config var in herkou dashboard
 git push herko master
 
+3. service worker in react - 
+it is used to display page during slow network or when offline as it caches the pages, you can turn it on using
+serviceWorker.register();
+
+4. axios - 
+
+
