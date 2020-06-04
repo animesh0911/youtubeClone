@@ -1,0 +1,18 @@
+1. statics vs method for mongoose - 
+Use method on individual documents if you want to manipulate the individual  document like adding tokens etc. 
+Use the statics approach if you want query the whole collection.
+
+2. deploying to heroku - 
+heroku login
+heroku create
+set port number to process.env.PORT || 5000
+create engine object in package.json and set node and npm versions in engine object
+set config var in herkou dashboard
+git push herko master
+
+3. service worker in react - 
+it is used to display page during slow network or when offline as it caches the pages, you can turn it on using
+serviceWorker.register();
+
+4. axios - 
+used to send request to server
