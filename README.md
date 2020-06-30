@@ -1,3 +1,6 @@
+This is a youtube clone webiste deveopled using MERN stack
+
+
 To use this application, 
 
 1. make dev.js file inside config folder 
